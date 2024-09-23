@@ -38,24 +38,24 @@ food-ordering-system/
 ## 📖 Features Breakdown
 **Outlet Selection**
 
-Users can select from a list of available outlets such as Starbucks, Cafe Coffee Day, Dunkin' Donuts, and Subway.
-Each outlet shows its operating hours.\\
+*Users can select from a list of available outlets such as Starbucks, Cafe Coffee Day, Dunkin' Donuts, and Subway.
+*Each outlet shows its operating hours.<br>
 **Menu and Cart Management**
 
-After selecting an outlet, users can browse the menu for that outlet.
-Users can add items to their cart, modify quantities, and remove items.
-Cart summary is updated in real-time.\\
+*After selecting an outlet, users can browse the menu for that outlet.
+*Users can add items to their cart, modify quantities, and remove items.
+*Cart summary is updated in real-time.<br>
 **Payment Page**
 
-Users can review the items in their cart along with the total amount.
-A confirmation page is shown once the order is placed.\\
+*Users can review the items in their cart along with the total amount.
+*A confirmation page is shown once the order is placed.<br>
 **Merchant Dashboard**
 
-Merchants can view a table of all orders placed by customers.
-The status of each order (Preparing, Pending, Completed) can be changed using a dropdown.\\
+*Merchants can view a table of all orders placed by customers.
+*The status of each order (Preparing, Pending, Completed) can be changed using a dropdown.<br>
 ## 🔧 Future Enhancements
-Backend Integration: Integrate a backend (Node.js, Express, MongoDB) for persistent data storage and real-time updates.
-Authentication: Add user and merchant authentication to restrict access to the dashboard.
-Order History: Allow users to view their past orders and track their current order status.
-Payment Gateway Integration: Connect with a payment gateway for processing payments.
-UI Improvements: Enhance the UI with more animation and design improvements.
+*Backend Integration: Integrate a backend (Node.js, Express, MongoDB) for persistent data storage and real-time updates.
+*Authentication: Add user and merchant authentication to restrict access to the dashboard.
+*Order History: Allow users to view their past orders and track their current order status.
+*Payment Gateway Integration: Connect with a payment gateway for processing payments.
+*UI Improvements: Enhance the UI with more animation and design improvements.
