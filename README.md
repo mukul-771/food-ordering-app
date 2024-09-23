@@ -36,23 +36,23 @@ food-ordering-system/
 └── README.md            # Project documentation0
 ```
 ## 📖 Features Breakdown
-Outlet Selection
+**Outlet Selection**
 
 Users can select from a list of available outlets such as Starbucks, Cafe Coffee Day, Dunkin' Donuts, and Subway.
-Each outlet shows its operating hours.
+Each outlet shows its operating hours.\\
 **Menu and Cart Management**
 
 After selecting an outlet, users can browse the menu for that outlet.
 Users can add items to their cart, modify quantities, and remove items.
-Cart summary is updated in real-time.
+Cart summary is updated in real-time.\\
 **Payment Page**
 
 Users can review the items in their cart along with the total amount.
-A confirmation page is shown once the order is placed.
+A confirmation page is shown once the order is placed.\\
 **Merchant Dashboard**
 
 Merchants can view a table of all orders placed by customers.
-The status of each order (Preparing, Pending, Completed) can be changed using a dropdown.
+The status of each order (Preparing, Pending, Completed) can be changed using a dropdown.\\
 ## 🔧 Future Enhancements
 Backend Integration: Integrate a backend (Node.js, Express, MongoDB) for persistent data storage and real-time updates.
 Authentication: Add user and merchant authentication to restrict access to the dashboard.
