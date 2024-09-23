@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import OutletSelector from './components/OutletSelector';
 import Menu from './components/Menu';
 import Cart from './components/Cart';
+import Payment from './components/Payment';
+import Merchant from './components/Merchant'; // Correct import for Merchant
 import logo1 from './Assets/starbucks-coffee.svg';
 import logo2 from './Assets/cafe-coffee-day.svg';
 import logo3 from './Assets/dunkin-donuts-1.svg';
@@ -13,6 +15,8 @@ import logo4 from './Assets/subway-13.svg';
 const App = () => {
   const [selectedOutlet, setSelectedOutlet] = useState(null);
   const [cartItems, setCartItems] = useState([]);
+  const [isPaymentPage, setIsPaymentPage] = useState(false); // State for Payment page
+  const [isMerchantPage, setIsMerchantPage] = useState(false); // State for Merchant page
 
   const outlets = [
     { id: 1, name: 'Starbucks', logo: logo1, operationalTime: '9 AM - 9 PM' },
@@ -20,7 +24,7 @@ const App = () => {
     { id: 3, name: 'Dunkin Donuts', logo: logo3, operationalTime: '8 AM - 8 PM' },
     { id: 4, name: 'Subway', logo: logo4, operationalTime: '10 AM - 10 PM' },
   ];
-  
+
   const menuItems = {
     1: [
       { id: 1, name: 'Coffee', price: 50 },
@@ -59,7 +63,6 @@ const App = () => {
       { id: 28, name: 'Wrap', price: 140 },
     ],
   };
-  
 
   const handleSelectOutlet = (outlet) => {
     setSelectedOutlet(outlet);
@@ -81,35 +84,55 @@ const App = () => {
   };
 
   const handleRemoveFromCart = (id) => {
-    setCartItems((prevItems) => 
-      prevItems.filter((item) => item.id !== id)
-    );
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   const handlePlaceOrder = () => {
-    console.log('YOUR ORDER IS SUCCESSFULLY PLACED');
-    toast.success('YOUR ORDER IS SUCCESSFULLY PLACED');
+    setIsPaymentPage(true); // Navigate to payment page
   };
+
+  const handlePayNow = () => {
+    toast.success('Payment Successful!');
+    setIsPaymentPage(false); // Navigate back to main page after payment
+    setCartItems([]);
+  };
+
+  const handleMerchantClick = () => {
+    setIsMerchantPage(true); // Navigate to merchant page
+  };
+
+  const totalAmount = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <div className="app-container">
       <h1 className="app-title">Food Ordering System</h1>
-      <OutletSelector outlets={outlets} onSelectOutlet={handleSelectOutlet} />
-      {selectedOutlet && (
-        <div className="content-container">
-          <div className="menu-section">
-            <h2 className="outlet-name">{selectedOutlet.name}</h2>
-            <p className="operational-time">Operational Time: {selectedOutlet.operationalTime}</p>
-            <Menu menuItems={menuItems[selectedOutlet.id]} onAddToCart={handleAddToCart} />
-          </div>
-          <div className="cart-section">
-            <Cart 
-              cartItems={cartItems} 
-              onPlaceOrder={handlePlaceOrder} 
-              onRemoveFromCart={handleRemoveFromCart} 
-            />
-          </div>
-        </div>
+      <button className="merchant-button" onClick={handleMerchantClick}>
+        Merchant?
+      </button>
+      {isMerchantPage ? (
+        <Merchant />
+      ) : isPaymentPage ? (
+        <Payment cartItems={cartItems} totalAmount={totalAmount} onPayNow={handlePayNow} />
+      ) : (
+        <>
+          <OutletSelector outlets={outlets} onSelectOutlet={handleSelectOutlet} />
+          {selectedOutlet && (
+            <div className="content-container">
+              <div className="menu-section">
+                <h2 className="outlet-name">{selectedOutlet.name}</h2>
+                <p className="operational-time">Operational Time: {selectedOutlet.operationalTime}</p>
+                <Menu menuItems={menuItems[selectedOutlet.id]} onAddToCart={handleAddToCart} />
+              </div>
+              <div className="cart-section">
+                <Cart
+                  cartItems={cartItems}
+                  onPlaceOrder={handlePlaceOrder}
+                  onRemoveFromCart={handleRemoveFromCart}
+                />
+              </div>
+            </div>
+          )}
+        </>
       )}
       <ToastContainer position="top-center" autoClose={1000} hideProgressBar={true} />
     </div>
