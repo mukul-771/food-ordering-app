@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# 🥡 Food Ordering System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive web-based Food Ordering System where users can select an outlet, browse the menu, and place an order. Merchants can track and update the status of customer orders in real-time through a dedicated Merchant Dashboard.
 
-## Available Scripts
+This project is a combined effort of **Mukul Meena**, **Om Gupta**, and **Kailash Dusad**.
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- **Outlet Selection**: Choose from various outlets like Starbucks, Cafe Coffee Day, Dunkin' Donuts, and Subway.
+- **Dynamic Menu**: View the menu items for the selected outlet with prices and add them to the cart.
+- **Cart Management**: Easily add, remove, and update items in the shopping cart before placing the order.
+- **Payment Page**: Review your order and proceed with the payment.
+- **Merchant Dashboard**: Merchants can view all incoming orders and change their status (e.g., Preparing, Pending, Completed).
+- **Real-time Order Status Updates**: The merchant can dynamically change the order status through a dropdown menu.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+food-ordering-system/
+├── public/              # Public assets
+│   ├── index.html       # Main HTML file
+│   └── assets/          # Image and media assets
+├── src/                 # Main project source code
+│   ├── components/      # React components
+│   │   ├── Cart.js      # Cart component
+│   │   ├── Menu.js      # Menu component
+│   │   ├── OutletSelector.js  # Outlet selection component
+│   │   ├── Payment.js   # Payment review component
+│   │   ├── Merchant.js  # Merchant Dashboard component
+│   │   └── ThankYou.js  # Thank you page component
+│   ├── App.js           # Main app component
+│   ├── App.css          # Global CSS styling
+│   ├── index.js         # App entry point
+├── .gitignore           # Files to ignore in git
+├── package.json         # Project metadata and npm dependencies
+└── README.md            # Project documentation0
+```
+## 📖 Features Breakdown
+Outlet Selection
 
-### `npm test`
+Users can select from a list of available outlets such as Starbucks, Cafe Coffee Day, Dunkin' Donuts, and Subway.
+Each outlet shows its operating hours.
+**Menu and Cart Management**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After selecting an outlet, users can browse the menu for that outlet.
+Users can add items to their cart, modify quantities, and remove items.
+Cart summary is updated in real-time.
+**Payment Page**
 
-### `npm run build`
+Users can review the items in their cart along with the total amount.
+A confirmation page is shown once the order is placed.
+**Merchant Dashboard**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Merchants can view a table of all orders placed by customers.
+The status of each order (Preparing, Pending, Completed) can be changed using a dropdown.
+## 🔧 Future Enhancements
+Backend Integration: Integrate a backend (Node.js, Express, MongoDB) for persistent data storage and real-time updates.
+Authentication: Add user and merchant authentication to restrict access to the dashboard.
+Order History: Allow users to view their past orders and track their current order status.
+Payment Gateway Integration: Connect with a payment gateway for processing payments.
+UI Improvements: Enhance the UI with more animation and design improvements.
